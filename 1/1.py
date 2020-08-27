@@ -75,7 +75,20 @@ if company_proceeds > company_cost:
 else:
     print("компания работает в -")
 
+
 # 1.6 Спортсмен занимается ежедневными пробежками. В первый день его результат составил a километров.
 # Каждый день спортсмен увеличивал результат на 10 % относительно предыдущего.
 # Требуется определить номер дня, на который общий результат спортсмена составить не менее b километров.
 # Программа должна принимать значения параметров a и b и выводить одно натуральное число — номер дня.
+user_distance = input("сколько километров пробежали:")
+user_target = input("сколько километров хотите пробежать:")
+user_distance = int(user_distance)
+user_target = int(user_target)
+if user_target > 0 and user_distance > 0:
+    tD = 1
+    while True:
+        user_distance = (user_distance / 100) * 110
+        if user_distance >= user_target:
+            print(f"цель достигните на день {tD}")
+            break
+        tD += 1
