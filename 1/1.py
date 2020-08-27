@@ -58,7 +58,22 @@ if user_num > 0:
 # Выведите соответствующее сообщение.
 # Если фирма отработала с прибылью, вычислите рентабельность выручки (соотношение прибыли к выручке).
 # Далее запросите численность сотрудников фирмы и определите прибыль фирмы в расчете на одного сотрудника.
+company_proceeds = input("введите выручку:")
+company_cost = input("введите издержки:")
 
+company_proceeds = int(company_proceeds)
+company_cost = int(company_cost)
+if company_proceeds > company_cost:
+    print("компания работает в +")
+    company_profit = company_proceeds - company_cost
+    print(f"прибыль: {company_profit}")
+    print(f"рентабельность: {company_profit/company_proceeds}")
+    company_employees = input("введите число сотрудников:")
+    company_employees = int(company_employees)
+    if company_employees > 0:
+        print(f"прибыль с сотрудника: {company_profit/company_employees}")
+else:
+    print("компания работает в -")
 
 # 1.6 Спортсмен занимается ежедневными пробежками. В первый день его результат составил a километров.
 # Каждый день спортсмен увеличивал результат на 10 % относительно предыдущего.
