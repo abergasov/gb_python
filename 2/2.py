@@ -107,3 +107,39 @@ print(f"Итоговый рейтинг: {my_list}")
 # “количество”: [5, 2, 7],
 # “ед”: [“шт.”]
 # }
+products_map = []
+i = 0
+while True:
+    print("Добавляем новый товар. Введите -1 для выхода")
+    title = input("Введите название товара: ")
+    if title == "-1":
+        break
+    price = input("Введите цену товара: ")
+    if price == "-1":
+        break
+    count = input("Введите количество товара: ")
+    if count == "-1":
+        break
+    items = input("Введите еденицу измерения товара: ")
+    if items == "-1":
+        break
+
+    products_map.append((i, {
+        "название": title,
+        "цена": price,
+        "количество": count,
+        "eд": items,
+    }))
+    i += 1
+
+print(f"Всего товаров: {i}")
+print(f"Текущий список товаров {products_map}")
+
+analytic_data = {}
+
+for products_data in products_map:
+    for param_name in products_data[1]:
+        param_value = products_data[1][param_name]
+        analytic_data.setdefault(param_name, []).append(param_value)
+
+print(f"Аналитика о товарах: {analytic_data}")
